@@ -1,4 +1,5 @@
 import Entities.Product;
+import Entities.Students;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        productExample();
+        studentsExercise();
     }
 
     public static void productExample() {
@@ -107,5 +108,67 @@ public class Main {
         }
     }
 
+    public static void studentsExercise(){
+        /*
+         * TEMAS
+         * -----
+         * CONDICIONALES
+         * CLASES
+         * ARREGLOS
+         * TIPOS DE DATOS
+         * CONVERSIÓN |CASTEO DE DATOS
+         *
+         * */
+        Scanner scanner = new Scanner(System.in);
+        List<Students> studentsGroup = new ArrayList<>();
 
+        while (true) {
+            System.out.println("Menú:");
+            System.out.println("1. Registrar alumno y sus notas");
+            System.out.println("2. Mostrar alumnos y si aprobó o no");
+            System.out.println("3. Buscar alumno e indicar si no existe");
+            System.out.println("4. Actualizar las notas de un alumno");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+            int menuOption = scanner.nextInt();
+            scanner.nextLine();  // Consumir el salto de línea
+
+            switch (menuOption) {
+                case 1:
+                    System.out.print("Ingrese el nombre del alumno: ");
+
+                    System.out.print("Ingrese su primera nota: ");
+
+                    System.out.print("Ingrese su segunda nota: ");
+
+                    System.out.print("Ingrese su tercera nota: ");
+
+
+                    System.out.println("¡Alumno registrado!");
+                    break;
+                case 2:
+                    System.out.println("Estado de alumnos");
+
+                    break;
+                case 3:
+                    System.out.println("Buscar alumno...");
+
+                    break;
+                case 4:
+                    System.out.println("Ingrese el nombre del alumno...");
+
+                    break;
+                case 5:
+                    System.out.println("¡Hasta luego!");
+                    return;
+                default:
+                    System.out.println("Opción no válida.");
+                    break;
+            }
+
+        }
+
+
+
+    }
 }
