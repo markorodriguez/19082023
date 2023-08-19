@@ -14,7 +14,7 @@ public class Product {
         this.isAvailableHere = isAvailableHere;
     }
 
-    // Getters and Setters
+    // Getters y Setter
 
     public String getName() {
         return name;
@@ -47,6 +47,4 @@ public class Product {
     public void setAvailableHere(boolean availableHere) {
         isAvailableHere = availableHere;
     }
-
-
 }

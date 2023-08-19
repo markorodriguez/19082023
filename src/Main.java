@@ -13,8 +13,8 @@ public class Main {
     public static void productExample() {
         Scanner scanner = new Scanner(System.in);
         List<Product> inventory = new ArrayList<>();
-
         // Explicar While
+
         while (true) {
             System.out.println("Menú:");
             System.out.println("1. Agregar producto");
@@ -39,7 +39,7 @@ public class Main {
                     scanner.nextLine(); // Consume the newline character
                     System.out.print("Ingrese la disponibilidad (S / N): ");
                     String available = scanner.nextLine();
-                    boolean isAvailable = Objects.equals(available.toUpperCase(), "S");
+                    boolean isAvailable = Objects.equals(available.toLowerCase(), "s"); // elemento A y elemento a comparar B
                     inventory.add(new Product(name, price, stock, isAvailable));
                     break;
                 case 2:
@@ -48,7 +48,7 @@ public class Main {
                         System.out.println("Nombre: " + product.getName());
                         System.out.println("Precio: " + product.getPrice());
                         System.out.println("Cantidad en stock: " + product.getStock());
-                        System.out.println("¿Disponible en tienda?: " + (product.isAvailableHere() ? "Sí" : "No"));
+                        System.out.println("¿Disponible en tienda?: " + (product.isAvailableHere() ? "Sí" : "No")); // CONDICIÓN ? VALOR VERDADERO : VALOR FALSO
                         System.out.println("------------------------------");
                     }
                     break;
@@ -64,7 +64,7 @@ public class Main {
                     String searchedProduct = scanner.nextLine();
                     boolean isFound = false;
                     for (Product product : inventory) {
-                        if (product.getName().equalsIgnoreCase(searchedProduct)) {
+                        if (product.getName().equalsIgnoreCase(searchedProduct)) { // CASE INSENSITIVE (NO LE IMPORTA MAYUSCULAS NI MINUSCULAS)
                             System.out.println("Producto encontrado:");
                             System.out.println("Nombre: " + product.getName());
                             System.out.println("Precio: " + product.getPrice());
@@ -73,6 +73,7 @@ public class Main {
                             break;
                         }
                     }
+
                     if (!isFound) {
                         System.out.println("Producto no encontrado.");
                     }
